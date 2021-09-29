@@ -19,7 +19,7 @@ public enum ForwardConst {
     CMD_CREATE("create"),
     CMD_EDIT("edit"),
     CMD_UPDATE("update"),
-    CMD_DESTROY("destrot"),
+    CMD_DESTROY("destroy"),
 
     FW_ERR_UNKNOWN("error/unknown"),
     FW_TOP_INDEX("topPage/index"),
