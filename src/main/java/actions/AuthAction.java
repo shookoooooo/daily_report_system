@@ -54,6 +54,8 @@ public class AuthAction extends ActionBase {
 
                 EmployeeView ev = service.findOne(code, plainPass, pepper);
 
+                putSessionScope(AttributeConst.LOGIN_EMP, ev);
+
                 putSessionScope(AttributeConst.FLUSH, MessageConst.I_LOGINED.getMessage());
 
                 redirect(ForwardConst.ACT_TOP, ForwardConst.CMD_INDEX);
@@ -68,6 +70,15 @@ public class AuthAction extends ActionBase {
 
             forward(ForwardConst.FW_LOGIN);
         }
+    }
+
+    public void logout() throws ServletException, IOException {
+
+        removeSessionScope(AttributeConst.LOGIN_EMP);
+
+        putSessionScope(AttributeConst.FLUSH, MessageConst.I_LOGOUT.getMessage());
+
+        redirect(ForwardConst.ACT_AUTH, ForwardConst.CMD_SHOW_LOGIN);
     }
 
 }
