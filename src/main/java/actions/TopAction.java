@@ -13,7 +13,6 @@ public class TopAction extends ActionBase {
     public void process() throws ServletException, IOException {
 
         invoke();
-
     }
 
     public void index() throws ServletException, IOException {
@@ -28,3 +27,4 @@ public class TopAction extends ActionBase {
     }
 
 }
+
